@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Change_Over_Units";
+    Layout = "~/Views/Shared/_EmpLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CHANGE OVER UNITS-TND SYSTEM</title>
+</head>
+<body style="background-color:#f4f9f9;">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body" style="color:#36332b;">
+                        <h2 style="font-weight:600;">CHANGE OVER UNITS ENTRY</h2>
+
+                        <form class="forms-sample">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Month</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="Month" name="Month">
+                                </div>
+                                <label class="col-sm-2 col-form-label"></label>
+                                <label class="col-sm-2 col-form-label">Year</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="Year" name="Year">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">From Feeder</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="F_Feeder" name="F_Feeder">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Units</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="F_Units" name="F_Units">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">To Feeder</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="T_Feeder" name="T_Feeder">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Units</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="T_Units" name="T_Units">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="submit" class="btn btn-inverse-primary btn-lg" href="" value="ADD" formaction="Change_Over_Units" formmethod="post" /> &nbsp;
+                                    <input type="button" class="btn btn-inverse-primary btn-lg" href="" value="CANCEL" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">                        
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered" style="color:#36332b;">
+                                <thead>
+                                    <tr style="background-color:#6e9fcc;color:white;text-align:center;">
+                                        <th>No.</th>
+                                        <th>From Feeder</th>
+                                        <th>Units</th>
+                                        <th>To Feeder</th>
+                                        <th>Units</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td style="background-color:#e4ebed">2</td>
+                                        <td style="background-color:#e4ebed">3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    }
+</body>
+
+</html>
+
+
+

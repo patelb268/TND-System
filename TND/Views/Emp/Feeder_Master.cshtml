@@ -1,0 +1,233 @@
+﻿
+@{
+    ViewBag.Title = "Feeder_Master";
+    Layout = "~/Views/Shared/_EmpLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FEEDER MASTER-TND SYSTEM</title>
+</head>
+<body style="background-color:#f4f9f9;">
+    @using (Html.BeginForm())
+    {
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body" style="color:#36332b;">
+                    <h2 style="font-weight:600;">FEEDER MASTER ENTRY</h2>
+                    <form class="pt-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Month</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="Month" name="Month">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Year</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="Year" name="Year">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Feeder Code</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="F_Code" name="F_Code">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Feeder Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="F_Name" name="F_Name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">S/Dn. Code</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="SDn_Code" name="SDn_Code">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">S/Dn. Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="SDn_Name" name="SDn_Name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Feeder Catgr.</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="F_Cat" name="F_Cat">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">Feeder Type</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-lg" id="F_Type" name="F_Type">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">Capacity(KV)</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0" id="Cap" name="Cap">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Feeder Len.</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0.00" id="F_Len" name="F_Len">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Feeder Load</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0" id="F_Load" name="F_Load">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Conn. Load</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0" id="Conn_Load" name="Conn_Load">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Theoratical Loss</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0.00" id="T_Loss" name="T_Loss">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Prev. Yr Loss</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0.00" id="PY_Loss" name="PY_Loss">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">LT Loc. Cd.</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0" id="LTL_Code" name="LTL_Code">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">LT Feed. Code</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0" id="LTF_Code" name="LTF_Code">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">TR SS Code</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0" id="TRSS_Code" name="TRSS_Code">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">TR Feed. Code</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0" id="TRF_Code" name="TRF_Code">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">TR Sdivn</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-lg" placeholder="0" id="TR_Sdivn" name="TR_Sdivn">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+                            <div class="col-md-3">
+                            </div>                           
+                                
+                            <div class="col-md-6">
+                                    <input type="button" class="btn  btn-inverse-primary btn-lg" href="" value="DELETE" /> &nbsp;
+
+                                    <input type="submit" class="btn btn-inverse-primary btn-lg" href="" value="UPDATE" formaction="Feeder_Master_Update" formmethod="post" /> &nbsp;
+
+                                    <input type="submit" class="btn btn-inverse-primary btn-lg" href="" value="SUBMIT" formaction="Feeder_Master" formmethod="post" /> &nbsp;
+
+                                    <input type="button" class="btn btn-inverse-primary btn-lg" href="" value="CANCEL" />
+                            </div>
+                       </div>
+
+
+</form>
+                </div>
+            </div>
+            <div class="col-lg-6 register-half-bg d-flex flex-row">
+            </div>
+        </div>
+              
+             
+    }
+</body>
+
+</html>
+
+

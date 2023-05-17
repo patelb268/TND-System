@@ -1,0 +1,109 @@
+﻿@model List<TND.Models.Employee>
+@{
+    ViewBag.Title = "Tables_Emp";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var loclist = (List<TND.Models.Location>)ViewBag.Locationlist;
+    var deslist = (List<TND.Models.Designation>)ViewBag.Desiglist;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TABLES-EMPLOYEE</title>
+</head>
+<body>
+    <div class="container-scroller">
+
+        <div class="container-fluid page-body-wrapper">
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+        
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title"style="color:#36332b;">Employee Table</h4>                             
+                                    <div class="table-responsive">                                        
+                                        <table class="table table-hover table-bordered" style="color:#36332b;">
+                                            <thead>
+                                                <tr style="background-color:#6e9fcc;color:white;text-align:center;">
+                                                    <th>No.</th>
+                                                    <th>Emp_ID</th>
+                                                    <th>Emp_Name</th>
+                                                    <th>Location_Name</th>
+                                                    <th>Email_ID</th>
+                                                    <th>Mobile_No</th>
+                                                    <th>Status</th>
+                                                    <th>Type</th>                                                 
+                                                    <th>Designation_Name</th>
+                                                    <th colspan="2">Modify</th>                                   
+                                                </tr>
+                                                
+                                            </thead>
+                                            <tbody>
+                                                @{
+                                                    int no = 0;
+                                                    foreach (var s in Model)
+                                                    {
+                                                        foreach (var l in loclist)
+                                                        {
+                                                            foreach (var d in deslist)
+                                                            {
+                                                                if (s.Location == l.LTLocation_Code && s.Designation == d.Designation_ID)
+                                                                {
+                                                                    no++;
+                                                                    <tr>
+                                                                            <td>@no</td>
+                                                                            <td><lable id="empid" name="empid">@s.Emp_ID</lable></td>
+                                                                            <td>@s.Emp_Name</td>
+                                                                            <td>@l.Location_Name</td>                                                            
+                                                                            <td>@s.Email_ID</td>
+                                                                            <td>@s.Mobile_No</td>
+                                                                            <td>
+                                                                                @{
+                                                                                    if (s.Status == true)
+                                                                                    {
+                                                                                        <lable class="badge badge-warning">Active</lable>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <lable class="badge badge-danger">InActive</lable>
+                                                                                    }
+                                                                                }
+
+                                                                            </td>
+                                                                            <td>
+                                                                                @{
+                                                                                    if (s.Type == true)
+                                                                                    {
+                                                                                        <lable class="badge badge-primary">Admin</lable>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <lable class="badge badge-secondary">Employee</lable>
+                                                                                    }
+                                                                                }
+                                                                                </td>                                                                       
+                                                                            <td>@d.Designation_Name</td>
+                                                                            <td>@Html.ActionLink("Edit", "Registration", new { empid = @s.Emp_ID }, new { @class = "btn btn-inverse-primary btn-fw " })</td>
+                                                                            <td>@Html.ActionLink("Delete", "EmpDelete", new { empid = @s.Emp_ID }, new { @class = "btn btn-inverse-dark btn-fw" })</td>                                                          
+                                                           
+                                                                       </tr>
+                                                                }
+                                                            }
+                                                        }
+                                                     }
+                                                  }
+                                            </tbody>
+                                        </table>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+    </body>
+</html>

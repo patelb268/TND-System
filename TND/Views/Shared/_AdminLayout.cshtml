@@ -1,0 +1,165 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- base:css -->
+    <link rel="stylesheet" href="../vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../vendors/base/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="../images/favicon.png" />
+</head>
+<body style="background-color:aliceblue;">
+    <div class="container-scroller">
+        <!-- START horizontal menu -->
+        <div class="horizontal-menu">
+            <nav class="navbar top-navbar col-lg-12 col-12 p-0">
+                <div class="container-fluid">
+                    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+                        <ul class="navbar-nav navbar-nav-left">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+                                    <i class="mdi mdi-bell mx-0"></i>
+                                    <span class="count bg-success">2</span>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                                    <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+                                    <a class="dropdown-item preview-item">
+                                        <div class="preview-thumbnail">
+                                            <div class="preview-icon bg-success">
+                                                <i class="mdi mdi-information mx-0"></i>
+                                            </div>
+                                        </div>
+                                        <div class="preview-item-content">
+                                            <h6 class="preview-subject font-weight-normal">New Complain</h6>
+                                            <p class="font-weight-light small-text mb-0 text-muted">
+                                                Just now..
+                                            </p>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </li>
+                        </ul> 
+                        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                            <img src="../images/mgvcl_logo.png" height="75" width="350" alt="logo" />
+                        </div>
+                        <ul class="navbar-nav navbar-nav-right">
+                            <li class="nav-item nav-profile dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                                    <span class="nav-profile-name">@Session["Name"]</span>
+                                    <span class="online-status"></span>
+                                    <img src="../images/faces/face28.png" alt="profile" />
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                                    <a class="dropdown-item">
+                                        <i class="mdi mdi-logout text-primary"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="horizontal-menu-toggle">
+                            <span class="mdi mdi-menu"></span>
+                        </button>
+                                           
+                    </div>
+                </div>
+            </nav>
+            <nav class="bottom-navbar">
+                <div class="container">
+                    <ul class="nav page-navigation">
+                        <li>
+                            <img src="../images/Tnd-Logo.png" height="75" width="200" alt="logo" />
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Dashboard","Admin")">
+                                <img src="../images/icons/dashboard.png" height="35" width="30" alt="Dashboard_icon" />       
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Registration","Admin")">
+                                <img src="../images/icons/reg.png" height="35" width="30" alt="Registration_icon" />
+                                <span class="menu-title">Registration</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Designation","Admin")">
+                                <img src="../images/icons/desig.png" height="35" width="30" alt="Designation_icon" />
+                                <span class="menu-title">Designation</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"href="@Url.Action("Location","Admin")">
+                                <img src="../images/icons/location.png" height="35" width="30" alt="Location_icon" />
+                                <span class="menu-title">Location</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                        </li>   
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Tables_Req_Revert","Admin")">
+                                <img src="../images/icons/revert.png" height="35" width="30" alt="Revert_icon" />
+                                <span class="menu-title">Revert MonthEnd Request</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                        </li>                                          
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <img src="../images/icons/table.png" height="35" width="30" alt="Tables_icon" />
+                                <span class="menu-title">Tables</span>
+                                <i class="menu-arrow"></i>
+                            </a>
+                            <div class="submenu">
+                                <ul class="submenu-item">
+                                    <li class="nav-item"><a class="dropdown-item" href="@Url.Action("Tables_Emp","Admin")">Employee</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="@Url.Action("Tables_Comp","Admin")">Complain</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="@Url.Action("Tabels_Desig","Admin")">Designation</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="@Url.Action("Tables_Loc","Admin")">Location</a></li>
+                                    <li class="nav-item"><a class="dropdown-item" href="@Url.Action("Tables_Month_End","Admin")">Month-End</a></li>
+                                   
+                                </ul>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- END horizontal menu -->
+        <div>
+            @RenderBody()
+        </div>
+        <!-- START footer -->
+        <footer class="footer">
+            <div class="footer-wrap">
+                <div class="w-100 clearfix">
+                    <span class="d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 <a href="https://www.templatewatch.com/" target="_blank">templatewatch</a>. All rights reserved.</span>
+                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart-outline"></i></span>
+                </div>
+            </div>
+        </footer>
+        <!-- END footer -->
+    </div>
+    <!-- base:js -->
+    <script src="../vendors/base/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+</body>
+</html>

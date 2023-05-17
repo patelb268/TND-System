@@ -1,0 +1,67 @@
+﻿@model List<TND.Models.Complain>
+@{
+    ViewBag.Title = "Tables_Comp";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TABLES-COMPLAIN</title>
+</head>
+<body>
+    <div class="container-scroller">
+
+        <div class="container-fluid page-body-wrapper">
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+
+                        
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title" style="color:#36332b;">Complain Table</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered" style="color:#36332b;">
+                                            <thead>
+                                                <tr style="background-color:#6e9fcc;color:white;text-align:center;">
+                                                    <th>No.</th>
+                                                    <th>Emp_ID</th>
+                                                    <th>Complain</th>
+                                                    <th>Remark</th>
+                                                    <th>Status</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{
+                                                    int no = 0;
+                                                    foreach (var s in Model)
+                                                    {
+                                                        no++;
+                                                        <tr>
+                                                            <td>@no</td>
+                                                            <td>@s.Emp_ID</td>
+                                                            <td>@s.Complain1</td>
+                                                            <td>@s.Remark</td>
+                                                            <td>@s.Status</td>
+                                                            <td>@s.Date</td>
+                                                        </tr>
+                                                    }
+                                                }    
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

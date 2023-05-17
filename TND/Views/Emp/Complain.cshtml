@@ -1,0 +1,71 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_EmpLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Complain-TND SYSTEM</title>
+</head>
+<body style="background-color:#f4f9f9;">
+    @using (Html.BeginForm())
+    {
+        <div class="container-scroller">
+            <div class="container-fluid page-body-wrapper full-page-wrapper">
+                <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
+                    <div class="row flex-grow">
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                            <div class="auth-form-transparent text-left p-3" style="color:#36332b;">
+                                <h2 style="font-weight:600;">COMPLAIN</h2>
+                                <form class="pt-3">
+
+                                    <div class="form-group">
+                                        <label>Complain</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-lg" placeholder="Complain" >
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label>Remark</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-lg" placeholder="Remark" >
+                                        </div>
+                                    </div>
+
+                                  
+                                    <input type="submit" class="btn btn-inverse-primary btn-sm " href="" value="SUBMIT" formaction="" formmethod="post" /> &nbsp;
+
+                                    <input type="button" class="btn btn-inverse-primary btn-sm" href="" value="CANCEL" />
+                                    
+                                    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 register-half-bg d-flex flex-row">
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+        <!-- container-scroller -->
+        <!-- base:js -->
+        <script src="../../vendors/base/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="../../js/template.js"></script>
+        <!-- endinject -->
+        <!-- plugin js for this page -->
+        <!-- End plugin js for this page -->
+        <!-- Custom js for this page-->
+        <!-- End custom js for this page-->
+    }
+</body>
+</html>
