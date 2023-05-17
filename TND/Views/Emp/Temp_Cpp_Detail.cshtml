@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.Title = "Temp_Cpp_Detail";
+    Layout = "~/Views/Shared/_EmpLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TEMP & CPP DETAIL-TND SYSTEM</title>
+</head>
+<body style="background-color:#f4f9f9;">
+    @using (Html.BeginForm())
+    {
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body" style="color:#36332b;">
+                    <h2 style="font-weight:600;">TEMPORARY & CPP DETAIL ENTRY</h2>
+                    <form class="pt-3">
+
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Month</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-lg" id="Month" name="Month">
+                                    </div>
+                                    
+                                </div>
+                            </div>                          
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Year</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-lg" id="Year" name="Year">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">S/Divn CD.</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-lg" id="SDn_CD" name="SDn_CD">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-lg" id="SDn_NM" name="SDn_NM">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">FEEDER CD.</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control form-control-lg" id="F_CD" name="F_CD">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-lg" id="F_NM" name="F_NM">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="col-sm-3 col-form-label" style="text-decoration:underline;">Temp. Connection :</label>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Units</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="T_Un" name="T_Un">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Assessment</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="T_Asse" name="T_Asse">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Collection</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="T_Col" name="T_Col">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Arrears</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="T_Arr" name="T_Arr">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <label class="col-sm-3 col-form-label" style="text-decoration:underline;">CPP Detail :</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Units</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="Cpp_Un" name="Cpp_Un">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Assessment</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control form-control-lg" id="Cpp_Asse" name="Cpp_Asse">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="button" class="btn  btn-inverse-primary btn-lg" href="" value="DELETE" /> &nbsp;
+
+                                <input type="submit" class="btn btn-inverse-primary btn-lg" href="" value="UPDATE" formaction="Temp_Cpp_Detail_Update" formmethod="post" /> &nbsp;
+
+                                <input type="submit" class="btn btn-inverse-primary btn-lg" href="" value="SUBMIT" formaction="Temp_Cpp_Detail" formmethod="post" /> &nbsp;
+
+                                <input type="button" class="btn btn-inverse-primary btn-lg" href="" value="CANCEL" />
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6 register-half-bg d-flex flex-row">
+            </div>
+        </div>
+
+
+    }
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+﻿@model List<TND.Models.ATandC_Cal>
+@{
+    ViewBag.Title = "Tables_ATandC";
+    Layout = "~/Views/Shared/_EmpLayout.cshtml";
+    var loclist = (List<TND.Models.Location>)ViewBag.Locationlist;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TABLES-AT&C Table</title>
+</head>
+<body>
+    <div class="container-scroller">
+
+        <div class="container-fluid page-body-wrapper">
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+
+
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title" style="color:#36332b;">AT&C Table</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered" style="color:#36332b;">
+                                            <thead>
+                                                <tr style="background-color:#6e9fcc;color:white;text-align:center;">
+                                                    <th>No.</th>
+                                                    <th>Location ID</th>
+                                                    <th>Location Name</th>
+                                                    <th>Month</th>
+                                                    <th>Year</th>
+                                                    <th>Feeder Code</th>
+                                                    <th>Feeder Name</th>
+                                                    <th>Sent Out</th>
+                                                    <th>Payment</th>
+                                                    <th>Assement</th>
+                                                    <th>Sold</th>
+                                                    <th>Collection</th>
+                                                    <th>UnitRecord</th>
+                                                    <th>Change Over</th>                                                   
+                                                    <th>AT&C</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{
+                                                    int no = 0;
+                                                    foreach (var s in Model)
+                                                    {
+                                                        foreach (var l in loclist)
+                                                        {
+                                                            if (s.Location_ID == l.Location_ID)
+                                                            {
+                                                                no++;
+                                                                <tr>
+                                                                    <td>@no</td>
+                                                                    <td>@s.Location_ID</td>
+                                                                    <td>@l.Location_Name</td>
+                                                                    <td>@s.Month</td>
+                                                                    <td>@s.Year</td>
+                                                                    <td>@s.Feeder_Cd</td>
+                                                                    <td>@s.Feeder_Nm</td>
+                                                                    <td>@s.Sent_Out</td>
+                                                                    <td>@s.Payment</td>
+                                                                    <td>@s.Assement</td>
+                                                                    <td>@s.Sold</td>
+                                                                    <td>@s.Collection</td>
+                                                                    <td>@s.UnitRecord</td>
+                                                                    <td>@s.Change_Over</td>                                                                   
+                                                                    <td><lable class="badge badge-warning">@s.ATandC</lable></td>
+                                                                </tr>
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

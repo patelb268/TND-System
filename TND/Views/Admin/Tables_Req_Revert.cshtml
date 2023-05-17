@@ -1,0 +1,71 @@
+﻿@model List<TND.Models.Req_Revert_MonthEnd>
+@{
+    ViewBag.Title = "Tables_Req_Revert";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var loclist = (List<TND.Models.Location>)ViewBag.Locationlist;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tables-Request Revert</title>
+</head>
+<body>
+    <div class="container-scroller">
+
+        <div class="container-fluid page-body-wrapper">
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title" style="color:#36332b;">Revert Month-End Request Table</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered" style="color:#36332b;">
+                                            <thead>
+                                                <tr style="background-color:#6e9fcc;color:white;text-align:center;">
+                                                    <th>No.</th>
+                                                    <th>Location_ID</th>
+                                                    <th>Current Month</th>
+                                                    <th>Current Year</th>
+                                                    <th>Status</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @{
+                                                    int no = 0;
+                                                    foreach (var s in Model)
+                                                    {
+                                                        foreach (var l in loclist)
+                                                        {
+                                                            if (s.Location_ID == l.Location_ID)
+                                                            {
+                                                                no++;
+                                                         <tr>
+                                                            <td>@no</td>                                                            
+                                                            <td> @l.Location_Name</td>
+                                                            <td>@s.Month</td>
+                                                            <td>@s.Year</td>
+                                                            <td><lable class="badge badge-warning">OPEN</lable></td>
+                                                            <td style="text-align:center;">@Html.ActionLink("Revert", "Req_Revert", new { lid = @s.Location_ID,month=@s.Month,year=@s.Year}, new { @class = "btn btn-inverse-dark btn-fw" })</td>
+                                                        </tr>
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

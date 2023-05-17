@@ -1,0 +1,170 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration-TND SYSTEM</title>
+</head>
+<body style="background-color:#f4f9f9;">
+    @using (Html.BeginForm())
+    {
+        <div class="container-scroller">
+            <div class="container-fluid page-body-wrapper full-page-wrapper">
+                <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
+                    <div class="row flex-grow">
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                            <div class="auth-form-transparent text-left p-3" style="color:#36332b;">
+                                <h2 style="font-weight:600;">REGISTRATION</h2>
+                                <form class="pt-3">
+
+                                    <div class="form-group">
+                                        <label>Employee No.</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-lg" placeholder="Employee No." id="EID" name="EID" value=@ViewBag.data_empid>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Employee Name</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-lg" placeholder="Employee Name" id="EName" name="EName" value=@ViewBag.data_name>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label>Designation</label>
+                                        @Html.DropDownList("EDes", ViewBag.data_des as SelectList, ViewBag.data_de as string, new { @class = "form-control form-control-lg" })
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        @Html.DropDownList("ELoc", ViewBag.data_loc as SelectList, ViewBag.data_lo as string, new { @class = "form-control form-control-lg" })
+
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Email ID</label>
+                                        <div class="input-group">
+                                            <input type="email" class="form-control form-control-lg" placeholder="Email ID" id="EMail" name="EMail" value=@ViewBag.data_email>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Mobile No.</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control form-control-lg" placeholder="Mobile No." id="EMob" name="EMob" value=@ViewBag.data_mobile>
+                                        </div>
+                                    </div>
+
+                                    @if (ViewBag.data_sta == true)
+                                    {
+
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <div class="input-group">
+                                                <radiogroup id="status" name="status">
+                                                    <input type="radio" name="status" value="Active" checked>&nbsp;Active&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="radio" name="status" value="InActive">&nbsp;InActive
+                                                </radiogroup>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                            <div class="input-group">
+                                                <radiogroup id="status" name="status">
+                                                    <input type="radio" name="status" value="Active">&nbsp;Active&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="radio" name="status" value="InActive" checked>&nbsp;InActive
+                                                </radiogroup>
+                                            </div>
+                                        </div>
+                                    }
+
+
+                                    @if (ViewBag.data_typ == true)
+                                    {
+                                        <div class="form-group">
+                                            <label>Type</label>
+                                            <div class="input-group">
+                                                <radiogroup style="al" id="type" name="type">
+                                                    <input type="radio" name="type" value="Admin" checked>&nbsp;Admin&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="radio" name="type" value="Employee">&nbsp;Employee
+                                                </radiogroup>
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="form-group">
+                                            <label>Type</label>
+                                            <div class="input-group">
+                                                <radiogroup style="al" id="type" name="type">
+                                                    <input type="radio" name="type" value="Admin">&nbsp;Admin&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <input type="radio" name="type" value="Employee" checked>&nbsp;Employee
+                                                </radiogroup>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control form-control-lg" id="EPwd" placeholder="Password" name="EPwd" value="@ViewBag.data_pass">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label>Confirm Password</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control form-control-lg" id="ECPwd" placeholder="Confirm Password" name="ECPwd">
+                                        </div>
+                                    </div>
+
+
+
+                                    <input type="button" class="btn  btn-inverse-primary btn-sm" href="" value="DELETE" /> &nbsp;
+
+                                    <input type="submit" class="btn btn-inverse-primary btn-sm" href="" value="UPDATE" formaction="EmpUpdate" formmethod="post" /> &nbsp;
+
+                                    <input type="submit" class="btn btn-inverse-primary btn-sm" href="" value="SUBMIT" formaction="Registration" formmethod="post" /> &nbsp;
+
+                                    <input type="button" class="btn btn-inverse-primary btn-sm" href="" value="CANCEL" />
+
+
+                                    <div class="text-center mt-4 font-weight-light">
+                                        Already have an account? <a href="login.html" class="text-primary">Login</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 register-half-bg d-flex flex-row">
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+        <!-- container-scroller -->
+        <!-- base:js -->
+        <script src="../../vendors/base/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="../../js/template.js"></script>
+        <!-- endinject -->
+        <!-- plugin js for this page -->
+        <!-- End plugin js for this page -->
+        <!-- Custom js for this page-->
+        <!-- End custom js for this page-->
+    }
+</body>
+</html>

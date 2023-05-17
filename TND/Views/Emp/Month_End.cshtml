@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Month_End";
+    Layout = "~/Views/Shared/_EmpLayout.cshtml";
+} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MONTH END-TND SYSTEM</title>    
+</head>
+<body style="background-color:#f4f9f9;">
+@using (Html.BeginForm())
+{
+   <div class="col-12 grid-margin">
+       <div class="card">
+          <div class="card-body">
+                <h2  style="color:#36332b;font-weight:600;">MONTH-END</h2>
+                <br /><br />
+                <div class="row">
+                    <div class="col-md-9">
+                        <label class="col-sm-3 col-form-label" style="font-size:larger;border:dotted;text-align:center;">Current Month/Year</label>
+                        <i class="mdi mdi-arrow-right-bold" style="font-size:larger;"></i>                       
+                        <label class="col-sm-3 col-form-label" style="font-size:larger;border:dotted;text-align:center">@ViewBag.month/@ViewBag.year</label>
+                                                               
+                      </div>
+                       
+                    </div>
+                    <br /><br /><br />
+
+                <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-inverse-dark btn-lg" name="revert" value="@ViewBag.lid/@ViewBag.month/@ViewBag.year" formaction="@Url.Action("Tables_Month_End", "Admin")" formmethod="post">Request To Revert</button> &nbsp;
+                            <button type="submit" class="btn btn-inverse-dark btn-lg" name="close" value="@ViewBag.lid/@ViewBag.month/@ViewBag.year"  formaction="Month_End" formmethod="post">Close Current Month-Year</button> &nbsp;
+                        </div>
+                       
+                    </div>
+                </div>                        
+        </div>
+   </div>
+}
+</body>
+
+</html>
+
+                                                
+

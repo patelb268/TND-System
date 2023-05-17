@@ -1,0 +1,165 @@
+﻿@model List<TND.Models.Change_Over>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_EmpLayout.cshtml";
+    var feederlist = (List<TND.Models.Feeder_Master>)ViewBag.FeederList;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+    <script src="~/scripts/Chart.min.js"></script>           <!-- to render the GRAPH using Chart.js -->
+    <script src="~/scripts/jquery-3.5.0.min.js"></script>     <!-- to implement the JQuery -->
+
+    <style>
+        #chart_container {
+            width: 600px;
+            height: 600px;
+            border: 1px solid #ddd;
+            padding: 1px;
+            border-radius: 4px;
+        }
+    </style>
+
+</head>
+<body>
+   <div class="container-fluid page-body-wrapper">
+         <div class="main-panel">
+             <div class="content-wrapper">
+                  <div class="row">
+                       <div class="col-lg-6 grid-margin stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                               <canvas id="bar_chart"></canvas>   <!-- provides a canvas on which the chart is render-->
+                                            </div>
+                                        </div>
+                                    </div>
+                      
+                       <div class="col-lg-6 grid-margin stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover table-bordered" style="color:#36332b;">
+                                                        <thead>
+                                                            <tr style="background-color:#6e9fcc;color:white;text-align:center;">
+                                                                <th>NO.</th>
+                                                                <th>FROM FEEDER</th>
+                                                                <th>TO FEEDER</th>
+                                                                <th>UNITS</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @{
+                                                                int no = 0;
+                                                                    foreach (var s in Model)
+                                                                    {
+                                                                        no++;
+                                                                        <tr>
+                                                                            <td>@no</td>
+                                                                            @{ foreach (var f in feederlist)
+                                                                                {
+                                                                                    if (@s.F_Feeder == @f.Feeder_Code)
+                                                                                    {
+                                                                                        <td> @f.Feeder_Nm</td> break;
+                                                                                    }
+
+                                                                                }
+                                                                            }
+
+                                                                            @{ foreach (var f in feederlist)
+                                                                                {
+                                                                                    if (@s.T_Feeder == @f.Feeder_Code)
+                                                                                    {
+                                                                                        <td> @f.Feeder_Nm</td> break;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            <td><lable class="badge badge-warning">@s.T_Units</lable></td>
+                                                                        </tr>
+
+                                                                                    }
+                                                                                } 
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                   </div>
+              </div>
+          </div>
+       </div>         
+
+    <script>
+
+        $(document).ready(function () {
+            alert("Click O.K to See Graph");
+           var X = @Html.Raw(ViewBag.X_VAL); //taking data from ViewBag in "String" for X-Axis
+            var Y = @ViewBag.Y_VAL;          //taking data from ViewBag for Y-Axis
+            var ctx = $("#bar_chart");
+            var barChart = new Chart(ctx,{
+                                            //creating the Chart
+                type:'bar',                 //specifing type of chart
+                data:{                      //json na form ma data lese so apde controller ma json use kariyu for data...alternative json.encode method through but not work value convert thaine null show.. so this
+                    labels:X,              //loading data to X-Axis
+                    datasets:[{
+                        label:"Feeder Bar Chart Example",
+                        data:Y,            //loading data to Y-Axis
+                        backgroundColor: [
+                          'rgba(255, 99, 132, 0.2)',
+                          'rgba(54, 162, 235, 0.2)',
+                          'rgba(255, 206, 86, 0.2)',
+                          'rgba(75, 192, 192, 0.2)',
+                          'rgba(153, 102, 255, 0.2)',
+                           'rgba(255, 159, 64, 0.2)'
+                        ],                 //setting background color and border color for each Coloum (Bar)
+                        borderColor: [
+                          'rgba(255,99,132,1)',
+                          'rgba(54, 162, 235, 1)',
+                          'rgba(255, 206, 86, 1)',
+                          'rgba(75, 192, 192, 1)',
+                          'rgba(153, 102, 255, 1)',
+                          'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth:1  //setting Width for Bar
+                    }]
+                },
+
+                options:{               //Specification for Chart
+                    maintainAspectRatio:false,
+
+                    scales:{
+                        yAxes:[{       //specification for Y-Axis
+                            ticks:{
+                                beginAtZero:true  //starting Y-Axis at '0'
+                            },
+                            scaleLabel:{          //providing Lable to Axis
+                                display:true,
+                                labelString:'Loss',
+                                fontSize:16,
+                                fontStyle:'bold'
+                            }
+                        }],
+
+                        xAxes: [ {          //specification for X-Axis
+
+                            scaleLabel:{
+                                display:true,
+                                labelString:'Feeder-Name',
+                                fontSize:16,
+                                fontStyle:'bold'
+                            }
+                    }]
+                    }
+                }
+            });
+        });
+
+
+
+    </script>
+</body>
+</html>
